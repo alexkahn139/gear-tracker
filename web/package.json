@@ -3,5 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Gear Tracker frontend (Vite + React + TS)"
+  "description": "Gear Tracker frontend (Vite + React + TS)",
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  }
 }

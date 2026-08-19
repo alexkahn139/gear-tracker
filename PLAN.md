@@ -14,7 +14,7 @@ Work top to bottom. One task at a time. Test and commit after each task.
   Create `.gitignore` (node_modules, data/, web/dist/).
   ✅ `npm install` succeeds. `npx tsc --noEmit` passes.
 
-- [ ] **1.2 Database layer**
+- [x] **1.2 Database layer**
   Create `src/db/schema.ts` (Drizzle tables matching CONTEXT.md §Data Model).
   Create `src/db/index.ts` (open better-sqlite3 at `data/gear.db`, wrap in Drizzle).
   Create `src/migrations/001_init.sql` (the CREATE TABLE statements).

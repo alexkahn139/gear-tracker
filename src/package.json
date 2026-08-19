@@ -3,5 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Gear Tracker backend (Hono + Drizzle + better-sqlite3)"
+  "description": "Gear Tracker backend (Hono + Drizzle + better-sqlite3)",
+  "scripts": {
+    "migrate": "tsx ./db/migrate.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.4.0",
+    "drizzle-orm": "^0.44.2"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.5.4"
+  }
 }

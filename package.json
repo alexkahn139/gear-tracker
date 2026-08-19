@@ -6,6 +6,10 @@
     "src",
     "web"
   ],
+  "scripts": {
+    "typecheck": "npm run typecheck --workspaces",
+    "migrate": "npm run migrate --workspace @gear-tracker/backend"
+  },
   "devDependencies": {
     "typescript": "^5.5.4"
   }
