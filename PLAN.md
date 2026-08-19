@@ -21,12 +21,17 @@ Work top to bottom. One task at a time. Test and commit after each task.
   Create `src/db/migrate.ts` (runs .sql files in order, in a transaction).
   ✅ `sqlite3 data/gear.db ".tables"` shows all 5 tables.
 
-- [ ] **1.3 Hono server skeleton**
+- [x] **1.3 Hono server skeleton**
   Create `src/app.ts` (Hono instance, session middleware, error middleware).
   Create `src/server.ts` (mount routes, serve `web/dist/` as static fallback, listen :3000).
   Create `src/middleware/auth.ts` (session check, attach user to context).
   Create `src/middleware/error.ts` (catch → `{ error: msg }`).
   ✅ `curl localhost:3000/api/auth/me` returns `{"error":"Unauthorized"}`.
+
+- [x] **1.3b Test harness**
+  `node --test` + `tsx` runner. `src/test/fixtures.ts` (in-memory SQLite, fresh per
+  test), `app.request()` helper. First test: `GET /api/auth/me` → 401.
+  ✅ `npm run test` in src/ passes.
 
 - [ ] **1.4 Auth routes**
   Create `src/lib/utils.ts` (hashPassword/argon2, verifyPassword, generateShareToken).

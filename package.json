@@ -8,9 +8,14 @@
   ],
   "scripts": {
     "typecheck": "npm run typecheck --workspaces",
-    "migrate": "npm run migrate --workspace @gear-tracker/backend"
+    "migrate": "npm run migrate --workspace @gear-tracker/backend",
+    "test": "npm run test --workspace @gear-tracker/backend"
   },
   "devDependencies": {
     "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.1.1",
+    "hono": "^4.13.3"
   }
 }
