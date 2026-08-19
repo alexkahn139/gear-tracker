@@ -8,7 +8,7 @@ Work top to bottom. One task at a time. Test and commit after each task.
 
 **Goal:** Running Docker container. Register, log in, see a page in the browser.
 
-- [ ] **1.1 Repo & workspaces**
+- [x] **1.1 Repo & workspaces**
   Create root `package.json` with npm workspaces (`src`, `web`).
   Create `tsconfig.base.json` (`strict: true`, `target: ES2022`, `module: NodeNext`).
   Create `.gitignore` (node_modules, data/, web/dist/).

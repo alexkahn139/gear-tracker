@@ -1,0 +1,12 @@
+{
+  "name": "gear-tracker",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "src",
+    "web"
+  ],
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  }
+}
