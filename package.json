@@ -9,7 +9,9 @@
   "scripts": {
     "typecheck": "npm run typecheck --workspaces",
     "migrate": "npm run migrate --workspace @gear-tracker/backend",
-    "test": "npm run test --workspace @gear-tracker/backend"
+    "test": "npm run test --workspace @gear-tracker/backend",
+    "build:web": "npm run build --workspace @gear-tracker/web",
+    "dev:web": "npm run dev --workspace @gear-tracker/web"
   },
   "devDependencies": {
     "typescript": "^5.5.4"

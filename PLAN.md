@@ -38,15 +38,17 @@ Work top to bottom. One task at a time. Test and commit after each task.
   Create `src/routes/auth.ts` (register, login, logout, me).
   ✅ curl register → login → me returns user object. Session cookie set.
 
-- [ ] **1.5 Frontend skeleton**
-  Scaffold `web/` with Vite + React + TS. Add Tailwind, shadcn/ui,
-  react-router-dom, TanStack Query, react-hook-form.
-  Create `App.tsx` (router, QueryClientProvider, all routes).
-  Create `lib/api.ts` (fetch wrapper, credentials: same-origin, parse { data }/{ error }).
-  Create `pages/Login.tsx`, `pages/Register.tsx` (react-hook-form, redirect on success).
-  Create `pages/Inventory.tsx` (placeholder heading).
-  Create `components/layout/Sidebar.tsx` + `TopBar.tsx` (nav, user name, logout).
-  ✅ Register → login → see Inventory page with sidebar in browser.
+- [x] **1.5 Frontend skeleton**
+  - [x] **1.5a Scaffold** — `web/` with Vite + React 18 + TS + Tailwind + shadcn/ui
+    (button, input, label, card) + react-router v6 + TanStack Query v5 + react-hook-form.
+    `App.tsx` (router + QueryClientProvider), `lib/api.ts` (fetch wrapper, credentials:
+    same-origin, parse `{ data }` / `{ error }` → throws `ApiRequestError`),
+    `lib/types.ts`, `hooks/useApi.ts`, `styles/globals.css`, placeholder pages
+    (Login, Register, Inventory, GearDetail, Loans, Trips, TripDetail, ShareView, NotFound),
+    Layout wrapper (Sidebar + TopBar). Vite dev proxy `/api` → :3000.
+    ✅ `npm run build --workspace @gear-tracker/web` passes. `tsc --noEmit` passes.
+  - [ ] **1.5b Functional pages** — working Login/Register against the real API,
+    Inventory with sidebar, register → login → browser flow.
 
 - [ ] **1.6 Docker**
   Write `Dockerfile` (multi-stage: build web/, copy into Node runtime + src/).
