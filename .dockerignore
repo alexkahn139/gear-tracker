@@ -1,0 +1,29 @@
+# VCS
+.git
+.gitignore
+
+# Local node_modules — the image installs its own
+node_modules
+**/node_modules
+
+# Local data (never bake into the image; it's a mounted volume)
+data
+**/*.db
+**/*.db-wal
+**/*.db-shm
+**/*.db-journal
+
+# Build output (rebuilt in the image)
+web/dist
+**/dist
+**/coverage
+**/*.log
+
+# Env / secrets
+.env
+.env.*
+
+# Docs & misc that aren't needed to run
+*.md
+!src/**/*.md
+.DS_Store
