@@ -47,8 +47,10 @@ Work top to bottom. One task at a time. Test and commit after each task.
     (Login, Register, Inventory, GearDetail, Loans, Trips, TripDetail, ShareView, NotFound),
     Layout wrapper (Sidebar + TopBar). Vite dev proxy `/api` → :3000.
     ✅ `npm run build --workspace @gear-tracker/web` passes. `tsc --noEmit` passes.
-  - [ ] **1.5b Functional pages** — working Login/Register against the real API,
-    Inventory with sidebar, register → login → browser flow.
+  - [x] **1.5b Functional pages** — Login/Register wired to the real API
+    (react-hook-form, redirect on success), Inventory placeholder with
+    Sidebar + TopBar, register → login → browser flow verified live
+    (backend :3000 + Vite :5173 proxy; register 201 → me 200 → logout 204 → me 401).
 
 - [ ] **1.6 Docker**
   Write `Dockerfile` (multi-stage: build web/, copy into Node runtime + src/).
