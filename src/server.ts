@@ -4,12 +4,10 @@ import { openDatabase } from './db/index.js';
 import { runMigrations } from './db/migrate.js';
 
 const PORT = Number(process.env.PORT ?? 3000);
-const NODE_ENV = process.env.NODE_ENV ?? 'development';
 
 openDatabase();
-if (NODE_ENV === 'production' || process.env.RUN_MIGRATIONS === 'true') {
-  runMigrations();
-}
+// Migrations are idempotent (IF NOT EXISTS), so run them unconditionally.
+runMigrations();
 
 const app = createApp();
 

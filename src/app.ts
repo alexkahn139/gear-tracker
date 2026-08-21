@@ -1,10 +1,10 @@
-import { Hono } from 'hono';
-import { serveStatic } from '@hono/node-server/serve-static';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { Hono } from 'hono';
+import { serveStatic } from '@hono/node-server/serve-static';
 import { errorHandler, notFoundHandler } from './middleware/error.js';
-import { requireAuth } from './middleware/auth.js';
+import { authRoutes } from './routes/auth.js';
 import type { AppEnv } from './env.js';
 
 const PROJECT_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
@@ -21,9 +21,8 @@ export function createApp(): Hono<AppEnv> {
 
   app.get('/api/health', (c) => c.json({ data: { status: 'ok' } }));
 
-  // Placeholder to prove typed context + middleware end-to-end.
-  // Will be replaced by src/routes/auth.ts in task 1.4.
-  app.get('/api/auth/me', requireAuth(), (c) => c.json({ data: c.get('user') }));
+  // Mount auth routes at /api/auth/{register, login, logout, me}.
+  app.route('/api/auth', authRoutes);
 
   // Fall-through for the built SPA.
   if (existsSync(WEB_DIST)) {

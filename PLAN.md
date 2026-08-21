@@ -33,7 +33,7 @@ Work top to bottom. One task at a time. Test and commit after each task.
   test), `app.request()` helper. First test: `GET /api/auth/me` → 401.
   ✅ `npm run test` in src/ passes.
 
-- [ ] **1.4 Auth routes**
+- [x] **1.4 Auth routes**
   Create `src/lib/utils.ts` (hashPassword/argon2, verifyPassword, generateShareToken).
   Create `src/routes/auth.ts` (register, login, logout, me).
   ✅ curl register → login → me returns user object. Session cookie set.
